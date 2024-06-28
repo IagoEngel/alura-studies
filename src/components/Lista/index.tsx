@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Lista.module.scss';
 
 function Lista() {
     const tarefas = [
@@ -17,11 +18,11 @@ function Lista() {
     ];
 
     return (
-        <aside>
+        <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul>
                 {tarefas.map((item, index) => ( // Colocar () quer dizer que voce já vai retornar (retorna um código JSX). E {} quer dizer que vc vai ter um escopo (sendo necessário abrir '()' novamente para declarar o código JSX)
-                    <li key={index}>
+                    <li key={index} className={style.item}>
                         <h3>{item.tarefa}</h3>
                         <span>{item.tempo}</span>
                     </li>
